@@ -1,0 +1,3 @@
+add_lunch_combo omni_aine-user
+add_lunch_combo omni_aine-userdebug
+add_lunch_combo omni_aine-eng
