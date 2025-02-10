@@ -1,0 +1,23 @@
+From f65e7693325e331b87667f2241947eda98419c69 Mon Sep 17 00:00:00 2001
+From: Parthib24 <sirajammunirparthi24@gmail.com>
+Date: Sun, 12 Nov 2017 13:27:26 +0600
+Subject: [PATCH] minui: fix display issue for sprd devices
+
+Signed-off-by: Parthib24 <sirajammunirparthi24@gmail.com>
+---
+ minuitwrp/graphics_fbdev.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/minuitwrp/graphics_fbdev.cpp b/minuitwrp/graphics_fbdev.cpp
+index a1c42d05..03c58ef3 100644
+--- a/minuitwrp/graphics_fbdev.cpp
++++ b/minuitwrp/graphics_fbdev.cpp
+@@ -98,7 +98,7 @@ static void set_displayed_framebuffer(unsigned n)
+ {
+     if (n > 1 || !double_buffered) return;
+ 
+-    vi.yres_virtual = gr_framebuffer[0].height * 2;
++    //vi.yres_virtual = gr_framebuffer[0].height * 2;
+     vi.yoffset = n * gr_framebuffer[0].height;
+     vi.bits_per_pixel = gr_framebuffer[0].pixel_bytes * 8;
+     if (ioctl(fb_fd, FBIOPUT_VSCREENINFO, &vi) < 0) {
